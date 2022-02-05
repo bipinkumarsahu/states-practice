@@ -8,10 +8,7 @@ class App extends react.Component {
         super(props);
         this.state = {lat: null, errorMessage: null} //this is the only time when we allow direct assignment to a state
 
-        window.navigator.geolocation.getCurrentPosition(
-            (position)=>this.setState({lat: position.coords.latitude}),
-            (error)=>this.setState({errorMessage : error.message})
-            );
+       
 
        
     }
@@ -27,6 +24,18 @@ class App extends react.Component {
         if(!this.state.lat && ! this.state.errorMessage)       
         return <div>Loading..</div>
     
+    }
+
+    componentDidMount(){
+        window.navigator.geolocation.getCurrentPosition(
+            (position)=>this.setState({lat: position.coords.latitude}),
+            (error)=>this.setState({errorMessage : error.message})
+            );
+
+    }
+
+    componentDidUpdate(){
+        console.log('Component updated')
     }
 }
 
