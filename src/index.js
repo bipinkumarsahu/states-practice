@@ -4,15 +4,8 @@ import reactDom from "react-dom";
 
 class App extends react.Component {
 
-    constructor(props){
-        super(props);
-        this.state = {lat: null, errorMessage: null} //this is the only time when we allow direct assignment to a state
-
-       
-
-       
-    }
-    
+   
+    state = {lat: null, errorMessage: null};
 
     render(){
         if(this.state.lat && !this.state.errorMessage)       
