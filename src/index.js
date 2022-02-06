@@ -17,7 +17,7 @@ class App extends react.Component {
         return <div>error: {this.state.errorMessage}</div>
 
         if(!this.state.lat && ! this.state.errorMessage)       
-        return <Spinner/>
+        return <Spinner message=" Please Allow  Location when propmpted"/>
     
     }
 
