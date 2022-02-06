@@ -9,7 +9,8 @@ class App extends react.Component {
    
     state = {lat: null, errorMessage: null};
 
-    render(){
+     renderContent() {
+
         if(this.state.lat && !this.state.errorMessage)       
         return <SeasonDisplay lat={this.state.lat} />
 
@@ -18,6 +19,13 @@ class App extends react.Component {
 
         if(!this.state.lat && ! this.state.errorMessage)       
         return <Spinner message=" Please Allow  Location when propmpted"/>
+
+    }
+
+    render(){
+        return(<div >
+        {this.renderContent()}
+    </div>);
     
     }
 
